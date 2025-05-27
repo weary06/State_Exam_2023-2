@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Iscrizione Corso</title>
+  <style>
+    body { font-family: Arial; margin: 2em; }
+    label, input, select { display: block; margin-top: 10px; }
+    .form-group { margin-bottom: 15px; }
+  </style>
+</head>
+<body>
+  <h2>Iscriviti a un Corso</h2>
+  <form action="/iscrizione" method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="codice_fiscale">Codice Fiscale:</label>
+      <input type="text" name="codice_fiscale" required>
+    </div>
+
+    <div class="form-group">
+      <label for="id_corso">Seleziona Corso:</label>
+      <select name="id_corso" required>
+        <option value="">-- Scegli corso --</option>
+        <!-- Questi dati andrebbero popolati da backend -->
+        <option value="1">Nuoto Adulti</option>
+        <option value="2">Acquagym</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="data_iscrizione">Data Iscrizione:</label>
+      <input type="date" name="data_iscrizione" required>
+    </div>
+
+    <div class="form-group">
+      <label for="certificato">Carica Certificato Medico (PDF):</label>
+      <input type="file" name="certificato" accept="application/pdf" required>
+    </div>
+
+    <div class="form-group">
+      <label for="scadenza">Data Scadenza Certificato:</label>
+      <input type="date" name="scadenza" required>
+    </div>
+
+    <button type="submit">Invia Iscrizione</button>
+  </form>
+</body>
+</html>
